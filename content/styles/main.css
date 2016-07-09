@@ -123,7 +123,7 @@ a {
     }
 
         #header h1 {
-            font-size: 4.35em;
+            font-size: 4em;
             font-weight: 900;
             /*letter-spacing: -0.035em;*/
             line-height: 1em;
@@ -294,12 +294,7 @@ a {
 
 /* Footer */
 
-    #footer {
-        background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-        background-image: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-        background-image: -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
-        background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
+#footer {
         bottom: 0;
         cursor: default;
         height: 6em;
@@ -309,3 +304,80 @@ a {
         text-align: center;
         width: 100%;
     }
+
+/* for all mobile */
+@media screen and (max-width: 768px) {
+    body {
+        background-color: black;
+    }
+    .space-wrapper .space{ 
+        width: 210%; height: 200%;
+        position: absolute;
+        top: -50%; left: -50%;
+        opacity: 1;
+    }
+}
+
+/* for iPad portrait*/
+@media screen and (width: 768px) and (orientation: portrait) {
+    #header p {
+        font-size: 2em;
+    }
+    #footer {
+        font-size: 1.4em;
+    }
+}
+/* for iPad landscape */
+@media screen and (width: 1024px) and (orientation: landscape) {
+    #header p {
+        font-size: 2em;
+    }
+    #footer {
+        font-size: 1.4em;
+    }
+}
+/* for iPhone 6plus portrait */
+@media screen and (width: 414px) and (orientation: portrait) {
+    #header p {
+        font-size: 1.4em;
+    }
+    #footer {
+        font-size: 1.1em;
+    }
+}
+/* for iPhone 6plus landscape */
+@media screen and (width: 736px) and (orientation: landscape) {
+    #header p {
+        font-size: 1.5em;
+    }
+    #footer {
+        font-size: 1.1em;
+    }
+    .space-wrapper .space { 
+        width: 210%; height: 230%;
+    }
+}
+/* for iPhone 5 portrait */
+@media screen and (width: 320px) and (orientation: portrait) {
+    #header h1 {
+        font-size: 3.2em;
+    }
+}
+/* for iPhone 5 landscape */
+@media screen and (width: 568px) and (orientation: landscape) {
+    #header h1 {
+        font-size: 3.2em;
+    }
+    .space-wrapper .space { 
+        width: 210%; height: 230%;
+    }
+}
+/* for Galaxy s5 landscape */
+@media screen and (width: 640px) and (orientation: landscape) {
+    #header h1 {
+        font-size: 3.2em;
+    }
+    .space-wrapper .space { 
+        width: 205%; height: 233%;
+    }
+}
