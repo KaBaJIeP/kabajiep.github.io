@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <title>wedding</title>
+        <link rel="icon" type="image/vnd.microsoft.icon" href="content/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Lobster');
+            body
+            {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
 
-<head>
-    <title>wedding.arkhipenko.me</title>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="content/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head>
+                font-family: 'Lobster', cursive;
+                text-align: center;
+                color: black;
+ 
+                background: rgb(197,222,234); /* Old browsers */
+                background: -moz-radial-gradient(center, ellipse cover, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 31%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+                background: -webkit-radial-gradient(center, ellipse cover, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: radial-gradient(ellipse at center, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 31%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            }
+            .content
+            {
+                width: 50%;
+                margin: 0 auto;
+            }
+        </style>
+        <script>
+            function onLoad()
+            {
+                var text = document.getElementById("greeting");
+                var url = new URL(location.href);
+                var person1 = url.searchParams.get("persone1");
+                var person2 = url.searchParams.get("persone2");
 
-<body>
-    
-</body>
+                if(person1 && person2)
+                {
+                    text.innerText = "Дорогой " + person1 + ", приглашаем тебя и " + person2 + " на нашу свадьбу!"
+                }
+                else if (person1)
+                {
+                    text.innerText = "Дорогой " + person1 + ", приглашаем тебя на нашу свадьбу!"
+                }
 
+                var contentHeight = document.getElementById("content").offsetWidth;
+                document.getElementById("zagsMap").style.width = contentHeight + "px";
+                document.getElementById("restoranMap").style.width = contentHeight + "px";
+
+            }
+        </script>
+    </head>
+
+    <body onload="onLoad()">
+        <div class="content" id="content">
+            <h1 id="greeting">Дорогой друг, приглашаем тебя на нашу свадьбу!</h1>
+            <hr>
+            <h2>Адрес Соломенского ЗАГСа : Киев, бульвар Вацлава Гавела 1</h2>
+            <h2>Время росписи : 14:20</h2>
+            <iframe id="zagsMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.7497292241724!2d30.429526615731252!3d50.44576217947479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cc3d61db507b%3A0xd4ba4d2164435144!2z0LHRg9C70YzQstCw0YAg0JLQsNGG0LvQsNCy0LAg0JPQsNCy0LXQu9CwLCAxLCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1527324347027" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <br>
+            <h2>Адрес ресторана "Дубки" : Киев, улица Стеценко 1</h2>
+            <h2>Время : 17:00</h2>
+            <iframe id="restoranMap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2234.821646820202!2d30.428026271790593!3d50.47617916554506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1149180076bb09c7!2z0JTRg9Cx0LrQuA!5e0!3m2!1sru!2sua!4v1527325111680" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <br>
+            <h3>Контакты : (099)706-67-49 Дима и (093)476-54-34 Люда</h3>
+        </div>
+    </body>
 </html>
